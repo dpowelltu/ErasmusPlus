@@ -57,6 +57,7 @@ def report():
     print(message)
 
 last_report = 0
+last_state = -1
 
 # ==== MAIN LOOP ====
 while True:
@@ -97,9 +98,12 @@ while True:
     
 # --- PERIODIC REPORT ---
 
-
-    if now - last_report > 10:
+    if state != last_state:
         report()
-        last_report = now
+        last_state = state
+
+   # if now - last_report > 10:
+   #     report()
+   #     last_report = now
     
     time.sleep(0.1)
