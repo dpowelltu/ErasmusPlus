@@ -38,10 +38,11 @@ print("Connected!")
 
 
 
-prev_weather = ""
+value = 0
 while True:
   print("MQTT Test... ", end="")
-  client.publish(MQTT_TOPIC, "Test")
+  client.publish(MQTT_TOPIC, "Test"+str(value))
+  value=value+1
 
 
 
